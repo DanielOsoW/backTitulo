@@ -52,7 +52,7 @@ Ejemplo:
 Entrada: nvfanivnauoyvbfearbueafgaapmlibtgsaaaaarfubueyrarghsog
 Salida: aaaaa','Búsqueda'),
 	('Busca vocal','Dada una lista de palabras, implemente un programa en lenguaje Python que entregue como salida una lista con todas
-las palabras que contengan una vocal en su posici ́on central.
+las palabras que contengan una vocal en su posición central.
 Ejemplo:
 Entrada: [’Canta’, ’oh’, ’diosa’, ’la’, ’colera’, ’del’, ’Pelida’, ’Aquileo’, ’colera’, ’funesta’, ’que’, ’causo’, ’infinitos’, ’males’,
 ’a’, ’los’, ’aqueos’, ’y’, ’precipito’, ’al’, ’Hades’, ’muchas’, ’almas’, ’valerosas’]
@@ -64,14 +64,14 @@ Entrada: 36 5 0 56 987 23
 Salida: [9, 5, 0, 11, 24, 5]
 Tip: El m ́etodo split(str) retorna una lista con substrings de un String como elementos, utilizando str como separador. Si
 no se especifica el separador, se utiliza por defecto el espacio en blanco.','Lógica'),
-	('Registros','Considere el registro de las calificaciones de un curso en el siguiente formato: [[Nombre(String), Calificaci ́on(Float)]]
+	('Registros','Considere el registro de las calificaciones de un curso en el siguiente formato: [[Nombre(String), Calificación(Float)]]
 Construya un programa en Python que entregue las siguientes salidas:
 Lista con los nombres de los alumnos aprobados.
-Lista con los nombres de los alumnos que deben rendir examen (3.0≤ calificaci ́on ≤3.9).
+Lista con los nombres de los alumnos que deben rendir examen (3.0≤ calificación ≤3.9).
 Lista con los nombre de los alumnos reprobados.
-Lista con nombre y nota del o los alumnos con mejor calificaci ́on.
-Lista con nombre y nota del o los alumnos con peor calificaci ́on.
-Calificaci ́on promedio del curso.
+Lista con nombre y nota del o los alumnos con mejor calificación.
+Lista con nombre y nota del o los alumnos con peor calificación.
+Calificación promedio del curso.
 Ejemplo:
 Entrada: [[’Felipe Echeverría’, 2.2],[’María Pérez’, 5.6],[’Rosa Navarro’, 3.6],[’Francisco Chavez’, 5.0]]
 Salida:
