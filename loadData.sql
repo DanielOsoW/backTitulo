@@ -57,8 +57,8 @@ Ejemplo:
 Entrada: [’Canta’, ’oh’, ’diosa’, ’la’, ’colera’, ’del’, ’Pelida’, ’Aquileo’, ’colera’, ’funesta’, ’que’, ’causo’, ’infinitos’, ’males’,
 ’a’, ’los’, ’aqueos’, ’y’, ’precipito’, ’al’, ’Hades’, ’muchas’, ’almas’, ’valerosas’]
 Salida: [’diosa’, ’del’, ’Aquileo’, ’funesta’, ’que’, ’causo’, ’a’, ’los’, ’precipito’]','Búsqueda'),
-	('Sumas','Para una secuencia de n ́umeros separados por espacios, construya un programa que entregue como resultado una lista,
-donde cada elemento sea la suma de los d ́ıgitos de cada uno de los n ́umeros de la lista de entrada.
+	('Sumas','Para una secuencia de números separados por espacios, construya un programa que entregue como resultado una lista,
+donde cada elemento sea la suma de los dígitos de cada uno de los números de la lista de entrada.
 Ejemplo:
 Entrada: 36 5 0 56 987 23
 Salida: [9, 5, 0, 11, 24, 5]
@@ -73,47 +73,46 @@ Lista con nombre y nota del o los alumnos con mejor calificaci ́on.
 Lista con nombre y nota del o los alumnos con peor calificaci ́on.
 Calificaci ́on promedio del curso.
 Ejemplo:
-Entrada: [[’Felipe Echeverr ́ıa’, 2.2],[’Mar ́ıa P ́erez’, 5.6],[’Rosa Navarro’, 3.6],[’Francisco Ch ́avez’, 5.0]]
+Entrada: [[’Felipe Echeverría’, 2.2],[’María Pérez’, 5.6],[’Rosa Navarro’, 3.6],[’Francisco Chavez’, 5.0]]
 Salida:
-La lista de alumnos reprobados es: [’Felipe Echeverr ́ıa’]
+La lista de alumnos reprobados es: [’Felipe Echeverría’]
 La lista de alumnos que rinden examen es: [’Rosa Navarro’]
-La lista de alumnos aprobados es: [’Mar ́ıa P ́erez’, ’Francisco Ch ́avez’]
-La peor calificaci ́on es: [[’Felipe Echeverr ́ıa’, 2.2]]
-La mejor calificaci ́on es: [[’Mar ́ıa P ́erez’, 5.6]]
+La lista de alumnos aprobados es: [’María Pérez’, ’Francisco Chavez’]
+La peor calificación es: [[’Felipe Echeverría’, 2.2]]
+La mejor calificación es: [[’María Pérez’, 5.6]]
 El promedio de las calificaciones es: 4.1
 Nota: Considere que todas las calificaciones se encuentran en el rango 0.0 hasta 7.0.','Estructuras'),
-	('Histograma','Construya un programa en Python que recibiendo como entrada una lista de n ́umeros enteros, dibuje un histograma
+	('Histograma','Construya un programa en Python que recibiendo como entrada una lista de números enteros, dibuje un histograma
 utilizando un caracter.
 Ejemplo.
 Entrada: [2,4,3,5]
 Salida:
 
-∗
-∗ ∗
-∗ ∗ ∗
-∗ ∗ ∗ ∗
-∗ ∗ ∗ ∗
+*
+* *
+* * *
+* * * *
+* * * *
 
-Recomendaci ́on: max(iterable) retorna el mayor elemento de un objeto iterable.','Lógica'),
-	('Traducción','El análisis de frecuencias, estudia estadísticamente la aparici ́on de letras o s ́ımbolos en un idioma. Construya un progra-
-ma en Python que comprima un texto mediante el reemplazo por s ́ımbolos, de las secuencias de dos letras m ́as frecuentes
+Recomendación: max(iterable) retorna el mayor elemento de un objeto iterable.','Lógica'),
+	('Traducción','El análisis de frecuencias, estudia estadísticamente la aparición de letras o símbolos en un idioma. Construya un progra-
+ma en Python que comprima un texto mediante el reemplazo por símbolos, de las secuencias de dos letras más frecuentes
 
-del idioma espa ̃nol.
+del idioma español.
 
 Secuencia es en el de la os ar ue ra re
-Simbolo # $ & % ( / ∗ + ? !
+Simbolo # $ & % ( / * + ? !
 
 Ejemplo.
 Entrada: en un lugar de la mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivia un hidalgo de
 los de lanza en astillero, adarga antigua, rocin flaco y galgo corredor.
 Salida: $ un lug* % ( mancha, % cuyo nomb! no quiero acord*me, no ha mucho tiempo q+ vivia un hidalgo % l/ % (nza $
 astillero, ad*ga antigua, rocin f(co y galgo cor!dor.
-Considere: El texto de ingreso en min ́usculas y sin tildes.
-Restricci ́on: No utilice el m ́etodo replace().
+Considere: El texto de ingreso en minúsculas y sin tildes.
+Restricción: No utilice el método replace().
 
-Recomendaci ́on: string.find(str) determina si str se encuentra en string, en caso de encontrarse, retorna el  ́ındice de co-
-mienzo de str en string en caso contrario retorna -1.','Búsqueda'),
-	('Factorial','Construya un programa que entregue como salida el factorial de un n ́umero n.
+Recomendación: string.find(str) determina si str se encuentra en string, en caso de encontrarse, retorna el  índice de comienzo de str en string en caso contrario retorna -1.','Búsqueda'),
+	('Factorial','Construya un programa que entregue como salida el factorial de un número n.
 Ejemplo.
 Entrada: 6
 Salida: 720
