@@ -14,16 +14,27 @@ class Carreras(models.Model):
     nombre_carrera = models.CharField(max_length=50)
 
 
-class Usuarios(models.Model):
+class Usuarios(AbstractUser):
     rol = models.ForeignKey(Roles, to_field='id', on_delete=models.CASCADE)
     apellido1 = models.CharField(max_length=20)
     apellido2 = models.CharField(max_length=20)
     nombres = models.CharField(max_length=40)
-    correo = models.CharField(max_length=40)
+    correo = models.CharField(max_length=40, unique=True)
     password = models.CharField(max_length=255)
     carrera = models.ForeignKey(Carreras, to_field='id', on_delete=models.CASCADE, blank=True, null=True)
+    date_joined = models.DateTimeField(auto_now_add=True, null=True)
+    email = models.CharField(max_length=40, null = True)
+    first_name = models.CharField(max_length=20, null = True)
+    is_active = models.BooleanField(default=False, null = True)
+    is_staff = models.BooleanField(default=False, null = True)
+    is_superuser = models.BooleanField(default=False, null = True)
+    last_login = models.DateTimeField(auto_now_add=True, null=True)
+    last_name = models.DateTimeField(auto_now_add=True, null=True)
+    username = None
+    
 
-    REQUIRED_FIELDS = [correo]
+    USERNAME_FIELD = 'correo'
+    REQUIRED_FIELDS = []
 
 class Enunciados(models.Model):
     titulo = models.CharField(max_length=50)

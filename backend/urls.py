@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from Aplicaciones.Enunciados.views import LogoutView
 from django.contrib import admin
 from django.urls import path
 from Aplicaciones.Enunciados import views as views
@@ -46,9 +47,17 @@ urlpatterns = [
     path('enunciados/all', views.lista_enunciados),  # Obtener o eliminar todas las carreras
     path('enunciados/create', views.crear_enunciado),  # Crear nueva carrera
     path('enunciados/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar una carrera
+    path('area/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar una carrera
+    path('entregado/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar una carrera
 
     # CRUD datos
     path('datos/all', views.lista_datos),  # Obtener o eliminar todas las carreras
     path('datos/create', views.crear_datos),  # Crear nueva carrera
     path('datos/<int:pk>', views.encontrar_datos),  # Leer, actualizar o eliminar una carrera
+
+    # LOGIN
+    path('login', views.login_user),  # login de ususarios
+    path('user', views.encontrar_user),  # datos del logueado
+    path('logout', LogoutView.as_view()),  # cerrar sesion del logueado
+
 ]

@@ -341,3 +341,66 @@ def encontrar_datos(request, pk):
     elif request.method == 'DELETE':
         dato.delete()
         return JsonResponse({'message': 'El dato fue correctamente eliminado'}, status=status.HTTP_204_NO_CONTENT)
+
+# Login
+
+@api_view(['POST'])
+def encontrar_user(request):
+    tok = JSONParser().parse(request)
+    token = tok['jwt']
+    if not token:
+        response.data = {
+        'message': 'success'
+    }
+
+    try:
+        payload = jwt.decode(token, 'secret', algorithms='HS256')
+    except jwt.ExpiredSignatureError:
+        response.data = {
+        'message': 'success'
+    }
+
+
+    user = models.Usuarios.objects.get(id=payload['id'])
+    serializer = serials.UsuariosSerializer(user)
+
+
+    return Response(serializer.data)
+   
+@api_view(['POST'])
+def login_user(request):
+    tok = JSONParser().parse(request)
+    correo = tok['correo']
+    password = tok['password']
+
+    user = models.Usuarios.objects.filter(correo=correo).first()
+    if user is None:
+        return JsonResponse({'message':'No existe'}, status=status.HTTP_400_BAD_REQUEST)
+    if not user.check_password(password):
+        return JsonResponse({'message':'Mala contra'}, status=status.HTTP_400_BAD_REQUEST)
+    payload = {
+        'id': user.id,
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
+        'iat': datetime.datetime.utcnow()
+    }
+
+    token = jwt.encode(payload, 'secret', algorithm='HS256')
+
+    response = Response()
+    
+    response.data ={
+        'jwt': token
+    }
+    return response
+
+
+
+class LogoutView(APIView):
+    def post(self, request):
+        response = Response()
+        response.delete_cookie('jwt')
+        response.data = {
+            'message': 'success'
+        }
+        return response
+
