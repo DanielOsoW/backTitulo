@@ -45,9 +45,21 @@ class Enunciados(models.Model):
 
 class Datos(models.Model):
     id_enunciado = models.ForeignKey(Enunciados, to_field='id', on_delete=models.CASCADE)
-    id_estudiante = models.ForeignKey(Usuarios, to_field='id', on_delete=models.CASCADE)
+    id_estudiante = models.ForeignKey(Usuarios, to_field='id', on_delete=models.CASCADE, null=True)
     fecha_inicio = models.DateTimeField(auto_now_add=True, null=True, editable=False)
-    fecha_termino = models.DateTimeField(auto_now_add=True, null=True)
-    errores = models.IntegerField(null=True)
+    fecha_termino = models.DateTimeField(null=True)
+    solucion = models.CharField(max_length=400,null=True, blank=True)
+    resultado = models.CharField(max_length=400,null=True, blank=True)
+    nro_errores = models.IntegerField(null=True)
+    module_error = models.IntegerField(null=True)
+    name_error = models.IntegerField(null=True)
+    identation_error = models.IntegerField(null=True)
+    index_error = models.IntegerField(null=True)
+    syntax_error = models.IntegerField(null=True)
+    type_error = models.IntegerField(null=True)
+    value_error = models.IntegerField(null=True)
+    nro_lineas = models.IntegerField(null=True)
+    nro_ediciones = models.IntegerField(null=True)
+    nro_compilaciones = models.IntegerField(null=True)
 
-    REQUIRED_FIELDS = [id_estudiante,id_enunciado,fecha_inicio]
+    REQUIRED_FIELDS = [id_enunciado,fecha_inicio]

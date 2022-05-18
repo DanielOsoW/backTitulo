@@ -18,35 +18,36 @@ INSERT INTO public."Enunciados_roles"(nombre_rol)
     ('QA');
 
 /* Usuarios */
-INSERT INTO public."Enunciados_usuarios"(apellido1,apellido2,nombres,correo,password,carrera_id,rol_id,date_joined,email,first_name,is_active,is_staff,is_superuser,last_login,last_name)
+INSERT INTO public."Enunciados_usuarios"(apellido1,apellido2,nombres,correo,password,carrera_id,rol_id)
 	VALUES
-	('Perez','Tapia','Hector Campos','hector.peta@gmail.com','asd',1,1, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Suarez','Ruiz','Edgar Ruiz','edsuru@live.cl','asd',1,1, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Ferrer','Gutierrez','Arturo Garrido','ferrerartu@smail.com','asd',1,2, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Pascual','Jiménez','Dorotea Morales','doropascual@hotmail.cl','asd',1,2, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Mora','Saez','Asunción Moreno','asumoreno@gmail.com','asd',1,3, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Hidalgo','Méndez','Reinaldo Mendez','reihidalgo@hotmail.cl','asd',2,3, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Juanes','Tapia','Alberto Esteban','albertoesteban@gmail.com','asd',3,3, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Suazo','Jara','Gerardo Juan','gejusuja@live.cl','asd',4,3, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Mendez','Román','Arturo Luis','arturoluis@smail.com','asd',5,3, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Labarca','Lara','Trinidad Kristina','trinikri@hotmail.cl','asd',1,4, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Cancino','Kri','Juan Pablo','jpcancino@gmail.com','asd',2,4, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Bielsa','Nilo','Fernando Lucas','ferbielsanilo@hotmail.cl','asd',3,4, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Rojas','Heller','Joaquin Cristobal','joacorojas@hotmail.cl','asd',4,4, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Linton','Cruz','Victoria Justa','vickylin@hotmail.cl','asd',5,4, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Lopez','Rodriguez','Sofía Javiera','sofilopez@gmail.com','asd',1,4, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Bravo','Caro','Gastón Bastián','bravogaston@hotmail.cl','asd',2,4, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Truman','Linetti','Julieta Francisca','julitruman@hotmail.cl','asd',3,4, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Catrileo','Yanka','Karla Constanza','karlacatrileo@gmail.com','asd',4,4, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd'),
-	('Gonzales','Rubilar','Linda Flor','lindaflor@hotmail.cl','asd',5,4, '2020/10/10', 'asd', 'asd', False, False, False, '2020/10/10', 'asd');
+	('Perez','Tapia','Hector Campos','hector.peta@gmail.com','asd',1,1),
+	('Suarez','Ruiz','Edgar Ruiz','edsuru@live.cl','asd',1,1),
+	('Ferrer','Gutierrez','Arturo Garrido','ferrerartu@smail.com','asd',1,2),
+	('Pascual','Jiménez','Dorotea Morales','doropascual@hotmail.cl','asd',1,2),
+	('Mora','Saez','Asunción Moreno','asumoreno@gmail.com','asd',1,3),
+	('Hidalgo','Méndez','Reinaldo Mendez','reihidalgo@hotmail.cl','asd',2,3),
+	('Juanes','Tapia','Alberto Esteban','albertoesteban@gmail.com','asd',3,3),
+	('Suazo','Jara','Gerardo Juan','gejusuja@live.cl','asd',4,3),
+	('Mendez','Román','Arturo Luis','arturoluis@smail.com','asd',5,3),
+	('Labarca','Lara','Trinidad Kristina','trinikri@hotmail.cl','asd',1,1),
+	('Cancino','Kri','Juan Pablo','jpcancino@gmail.com','asd',2,1),
+	('Bielsa','Nilo','Fernando Lucas','ferbielsanilo@hotmail.cl','asd',3,1),
+	('Rojas','Heller','Joaquin Cristobal','joacorojas@hotmail.cl','asd',4,2),
+	('Linton','Cruz','Victoria Justa','vickylin@hotmail.cl','asd',5,2),
+	('Lopez','Rodriguez','Sofía Javiera','sofilopez@gmail.com','asd',1,2),
+	('Bravo','Caro','Gastón Bastián','bravogaston@hotmail.cl','asd',2,3),
+	('Truman','Linetti','Julieta Francisca','julitruman@hotmail.cl','asd',3,3),
+	('Catrileo','Yanka','Karla Constanza','karlacatrileo@gmail.com','asd',4,3),
+	('Gonzales','Rubilar','Linda Flor','lindaflor@hotmail.cl','asd',5,1);
 
 /* Enunciados */
 INSERT INTO public."Enunciados_enunciados" (titulo,enunciado,tipo)
 	VALUES
-	('Pares','Llevar a cabo un programa en Python que compare 2 listas de números, revisando si la suma de cada número de la lista 1 con el de la lista 2 dan como resultado un número par. Lista 1: [1,2,3,4]. Lista 2: [1,2,2,1]','Orden'),
-	('Sumatoria','Crear un programa en Python que lleva a cabo una sumatoria de 1 desde el 1 al 10','Ciclos'),
-	('Encuentra palabra','Llevar a cabo un programa en Python que busque una palabra específica en un texto, y retorne si la palabra existe en el mismo y la cantidad de veces que aparece','Búsqueda'),
-	('Buscador de Aes','Construya un programa en Python que recibiendo como entrada una secuencia aleatoria de letras, identifique la
+	('Pares','Llevar a cabo un programa en Python que compare 2 listas de números,
+	\nrevisando si la suma de cada número de la lista 1 con el de la\nlista 2 dan como resultado un número par.\nLista 1: [1,2,3,4].\nLista 2: [1,2,2,1]','Orden'),
+	('Sumatoria','Crear un programa en Python que lleva a cabo una\nsumatoria de 1 desde el 1 al 10','Ciclos'),
+	('Encuentra palabra','Llevar a cabo un programa en Python que busque\nuna palabra específica en un texto, y retorne si la palabra existe en el mismo\ny la cantidad de veces que aparece','Búsqueda');
+	/*('Buscador de Aes','Construya un programa en Python que recibiendo como entrada una secuencia aleatoria de letras, identifique la
 secuencia mas larga de aes.
 Ejemplo:
 Entrada: nvfanivnauoyvbfearbueafgaapmlibtgsaaaaarfubueyrarghsog
@@ -123,7 +124,7 @@ Ejemplo.
 Entrada: 20266
 Salida: 4f2a','Lógica'),
 	('Encuentra palabra','Llevar a cabo un programa en Python que busque una palabra específica en un texto, y retorne si la palabra existe en el mismo y la cantidad de veces que aparece','Búsqueda'),
-	('Signos','Llevar a cabo un programa en Python que a partir de el día y mes de una persona, pueda entregar el signo zodiacal al cual pertenece esa persona','Lógica');
+	('Signos','Llevar a cabo un programa en Python que a partir de el día y mes de una persona, pueda entregar el signo zodiacal al cual pertenece esa persona','Lógica')*/
 
 
 

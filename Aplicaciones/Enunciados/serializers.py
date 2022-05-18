@@ -64,8 +64,20 @@ class DatosSerializer(serializers.ModelSerializer):
         model = models.Datos
         fields = (
             'id',
-            'id_enunciados',
+            'id_enunciado',
             'id_estudiante',
             'fecha_inicio',
             'fecha_termino',
-            'errores')
+            'solucion',
+            'resultado',
+            'nro_errores',
+            'module_error',
+            'name_error',
+            'identation_error',
+            'index_error',
+            'syntax_error',
+            'type_error',
+            'value_error',
+            'nro_lineas',
+            'nro_ediciones',
+            'nro_compilaciones')
