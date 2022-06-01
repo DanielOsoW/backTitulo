@@ -404,3 +404,49 @@ class LogoutView(APIView):
         }
         return response
 
+# CRUD Nasa
+
+@api_view(['GET', 'DELETE'])
+def lista_nasa(request):
+    if request.method == 'GET':
+        nasa = models.Nasa.objects.all()
+        nasaSerializer = serials.NasaSerializer(nasa, many=True)
+        return JsonResponse(nasaSerializer.data, safe=False)
+
+    elif request.method == 'DELETE':
+        count = models.Nasa.objects.all().delete()
+        return JsonResponse({'message': 'Se borraron exitosamente {} datos.'.format(count[0])},
+                            status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['POST'])
+def crear_nasa(request):
+    nasaData = JSONParser().parse(request)
+    nasaSerializer = serials.NasaSerializer(data=nasaData)
+    if nasaSerializer.is_valid():
+        nasaSerializer.save()
+        return JsonResponse(nasaSerializer.data, status=status.HTTP_201_CREATED)
+    else:
+        return JsonResponse(nasaSerializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET', 'PUT', 'PATCH', 'DELETE'])
+def encontrar_nasa(request, pk):
+    nasa = models.Nasa.objects.get(pk=pk)
+
+    if request.method == 'GET':
+        nasaSerializer = serials.NasaSerializer(nasa)
+        return JsonResponse(nasaSerializer.data)
+
+    elif request.method in ['PUT', 'PATCH']:
+        nasaData = JSONParser().parse(request)
+        nasaSerializer = serials.NasaSerializer(nasa, data=nasaData)
+        if nasaSerializer.is_valid():
+            nasaSerializer.save()
+            return JsonResponse(nasaSerializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return JsonResponse(nasaSerializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        nasa.delete()
+        return JsonResponse({'message': 'El dato fue correctamente eliminado'}, status=status.HTTP_204_NO_CONTENT)

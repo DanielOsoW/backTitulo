@@ -18,27 +18,27 @@ INSERT INTO public."Enunciados_roles"(nombre_rol)
     ('QA');
 
 /* Usuarios */
-INSERT INTO public."Enunciados_usuarios"(apellido1,apellido2,nombres,correo,password,carrera_id,rol_id)
+INSERT INTO public."Enunciados_usuarios"(apellido1,apellido2,nombres,correo,password,carrera_id,rol_id,sexo,edad)
 	VALUES
-	('Perez','Tapia','Hector Campos','hector.peta@gmail.com','asd',1,1),
-	('Suarez','Ruiz','Edgar Ruiz','edsuru@live.cl','asd',1,1),
-	('Ferrer','Gutierrez','Arturo Garrido','ferrerartu@smail.com','asd',1,2),
-	('Pascual','Jiménez','Dorotea Morales','doropascual@hotmail.cl','asd',1,2),
-	('Mora','Saez','Asunción Moreno','asumoreno@gmail.com','asd',1,3),
-	('Hidalgo','Méndez','Reinaldo Mendez','reihidalgo@hotmail.cl','asd',2,3),
-	('Juanes','Tapia','Alberto Esteban','albertoesteban@gmail.com','asd',3,3),
-	('Suazo','Jara','Gerardo Juan','gejusuja@live.cl','asd',4,3),
-	('Mendez','Román','Arturo Luis','arturoluis@smail.com','asd',5,3),
-	('Labarca','Lara','Trinidad Kristina','trinikri@hotmail.cl','asd',1,1),
-	('Cancino','Kri','Juan Pablo','jpcancino@gmail.com','asd',2,1),
-	('Bielsa','Nilo','Fernando Lucas','ferbielsanilo@hotmail.cl','asd',3,1),
-	('Rojas','Heller','Joaquin Cristobal','joacorojas@hotmail.cl','asd',4,2),
-	('Linton','Cruz','Victoria Justa','vickylin@hotmail.cl','asd',5,2),
-	('Lopez','Rodriguez','Sofía Javiera','sofilopez@gmail.com','asd',1,2),
-	('Bravo','Caro','Gastón Bastián','bravogaston@hotmail.cl','asd',2,3),
-	('Truman','Linetti','Julieta Francisca','julitruman@hotmail.cl','asd',3,3),
-	('Catrileo','Yanka','Karla Constanza','karlacatrileo@gmail.com','asd',4,3),
-	('Gonzales','Rubilar','Linda Flor','lindaflor@hotmail.cl','asd',5,1);
+	('Perez','Tapia','Hector Campos','hector.peta@gmail.com','asd',1,1,'Masculino',24),
+	('Suarez','Ruiz','Edgar Ruiz','edsuru@live.cl','asd',1,1,'Masculino',24),
+	('Ferrer','Gutierrez','Arturo Garrido','ferrerartu@smail.com','asd',1,2,'Masculino',24),
+	('Pascual','Jiménez','Dorotea Morales','doropascual@hotmail.cl','asd',1,2,'Femenino',24),
+	('Mora','Saez','Asunción Moreno','asumoreno@gmail.com','asd',1,3,'Prefiero no decirlo',24),
+	('Hidalgo','Méndez','Reinaldo Mendez','reihidalgo@hotmail.cl','asd',2,3,'Masculino',24),
+	('Juanes','Tapia','Alberto Esteban','albertoesteban@gmail.com','asd',3,3,'Masculino',24),
+	('Suazo','Jara','Gerardo Juan','gejusuja@live.cl','asd',4,3,'Masculino',24),
+	('Mendez','Román','Arturo Luis','arturoluis@smail.com','asd',5,3,'Masculino',24),
+	('Labarca','Lara','Trinidad Kristina','trinikri@hotmail.cl','asd',1,1,'Femenino',24),
+	('Cancino','Kri','Juan Pablo','jpcancino@gmail.com','asd',2,1,'Masculino',24),
+	('Bielsa','Nilo','Fernando Lucas','ferbielsanilo@hotmail.cl','asd',3,1,'Masculino',24),
+	('Rojas','Heller','Joaquin Cristobal','joacorojas@hotmail.cl','asd',4,2,'Masculino',24),
+	('Linton','Cruz','Victoria Justa','vickylin@hotmail.cl','asd',5,2,'Femenino',24),
+	('Lopez','Rodriguez','Sofía Javiera','sofilopez@gmail.com','asd',1,2,'Femenino',24),
+	('Bravo','Caro','Gastón Bastián','bravogaston@hotmail.cl','asd',2,3,'Masculino',24),
+	('Truman','Linetti','Julieta Francisca','julitruman@hotmail.cl','asd',3,3,'Femenino',24),
+	('Catrileo','Yanka','Karla Constanza','karlacatrileo@gmail.com','asd',4,3,'Prefiero no decirlo',24),
+	('Gonzales','Rubilar','Linda Flor','lindaflor@hotmail.cl','asd',5,1,'Femenino',24);
 
 /* Enunciados */
 INSERT INTO public."Enunciados_enunciados" (titulo,enunciado,tipo)

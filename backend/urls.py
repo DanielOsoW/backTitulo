@@ -44,20 +44,26 @@ urlpatterns = [
     path('carreras/<int:pk>', views.encontrar_carrera),  # Leer, actualizar o eliminar una carrera
 
     # CRUD enunciados
-    path('enunciados/all', views.lista_enunciados),  # Obtener o eliminar todas las carreras
-    path('enunciados/create', views.crear_enunciado),  # Crear nueva carrera
-    path('enunciados/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar una carrera
-    path('area/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar una carrera
-    path('entregado/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar una carrera
+    path('enunciados/all', views.lista_enunciados),  # Obtener o eliminar todas las enunciados
+    path('enunciados/create', views.crear_enunciado),  # Crear nuevo enunciado
+    path('enunciados/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar un enunciado
+    path('area/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar un enunciado
+    path('entregado/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar un enunciado
 
     # CRUD datos
-    path('datos/all', views.lista_datos),  # Obtener o eliminar todas las carreras
-    path('datos/create', views.crear_datos),  # Crear nueva carrera
-    path('datos/<int:pk>', views.encontrar_datos),  # Leer, actualizar o eliminar una carrera
+    path('datos/all', views.lista_datos),  # Obtener o eliminar todos datos
+    path('datos/create', views.crear_datos),  # Crear nuevos datos
+    path('datos/<int:pk>', views.encontrar_datos),  # Leer, actualizar o eliminar un dato
 
     # LOGIN
     path('login', views.login_user),  # login de ususarios
     path('user', views.encontrar_user),  # datos del logueado
     path('logout', LogoutView.as_view()),  # cerrar sesion del logueado
+
+    
+    # CRUD nasa
+    path('nasa/all', views.lista_nasa),  # Obtener o eliminar todas las métricas nasa
+    path('nasa/create', views.crear_nasa),  # Crear nueva métrica nasa
+    path('nasa/<int:pk>', views.encontrar_nasa),  # Leer, actualizar o eliminar una métrica nasa
 
 ]

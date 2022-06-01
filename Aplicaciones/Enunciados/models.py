@@ -20,6 +20,8 @@ class Usuarios(AbstractUser):
     apellido2 = models.CharField(max_length=20)
     nombres = models.CharField(max_length=40)
     correo = models.CharField(max_length=40, unique=True)
+    edad = models.IntegerField(null=True)
+    sexo = models.CharField(max_length=40,null=True)
     password = models.CharField(max_length=255)
     carrera = models.ForeignKey(Carreras, to_field='id', on_delete=models.CASCADE, blank=True, null=True)
     date_joined = models.DateTimeField(auto_now_add=True, null=True)
@@ -46,6 +48,8 @@ class Enunciados(models.Model):
 class Datos(models.Model):
     id_enunciado = models.ForeignKey(Enunciados, to_field='id', on_delete=models.CASCADE)
     id_estudiante = models.ForeignKey(Usuarios, to_field='id', on_delete=models.CASCADE, null=True)
+    edad = models.IntegerField(null=True)
+    sexo = models.CharField(max_length=40,null=True)
     fecha_inicio = models.DateTimeField(auto_now_add=True, null=True, editable=False)
     fecha_termino = models.DateTimeField(null=True)
     solucion = models.CharField(max_length=400,null=True, blank=True)
@@ -63,3 +67,16 @@ class Datos(models.Model):
     nro_compilaciones = models.IntegerField(null=True)
 
     REQUIRED_FIELDS = [id_enunciado,fecha_inicio]
+
+class Nasa(models.Model):
+    id_enunciado = models.ForeignKey(Enunciados, to_field='id', on_delete=models.CASCADE)
+    id_data = models.ForeignKey(Datos, to_field='id', on_delete=models.CASCADE)
+    mental = models.IntegerField(null=True)
+    fisico = models.IntegerField(null=True)
+    tiempo = models.IntegerField(null=True)
+    performance = models.IntegerField(null=True)
+    esfuerzo = models.IntegerField(null=True)
+    frustracion = models.IntegerField(null=True)
+    result = models.IntegerField(null=True)
+
+    REQUIRED_FIELDS = [id_enunciado,id_data]

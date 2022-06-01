@@ -29,6 +29,8 @@ class UsuariosSerializer(serializers.ModelSerializer):
             'apellido2',
             'nombres',
             'correo',
+            'edad',
+            'sexo',
             'password',
             'carrera',
             'date_joined','email','first_name','is_active','is_staff','is_superuser','last_login','last_name'
@@ -66,6 +68,8 @@ class DatosSerializer(serializers.ModelSerializer):
             'id',
             'id_enunciado',
             'id_estudiante',
+            'edad',
+            'sexo',
             'fecha_inicio',
             'fecha_termino',
             'solucion',
@@ -81,3 +85,19 @@ class DatosSerializer(serializers.ModelSerializer):
             'nro_lineas',
             'nro_ediciones',
             'nro_compilaciones')
+
+class NasaSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Nasa
+        fields = (
+            'id',
+            'id_enunciado',
+            'id_data',
+            'mental',
+            'fisico',
+            'tiempo',
+            'performance',
+            'esfuerzo',
+            'frustracion',
+            'result',)
