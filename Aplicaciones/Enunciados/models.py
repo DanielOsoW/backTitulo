@@ -42,6 +42,7 @@ class Enunciados(models.Model):
     titulo = models.CharField(max_length=50)
     enunciado = models.CharField(max_length=400)
     tipo = models.CharField(max_length=30)
+    respuesta = models.CharField(max_length=50)
 
     REQUIRED_FIELDS = [titulo,enunciado]
 
@@ -65,6 +66,9 @@ class Datos(models.Model):
     nro_lineas = models.IntegerField(null=True)
     nro_ediciones = models.IntegerField(null=True)
     nro_compilaciones = models.IntegerField(null=True)
+    nro_estrucflujo = models.IntegerField(null=True)
+    nro_operandos = models.IntegerField(null=True)
+    respuesta = models.CharField(max_length=50,null=True)
 
     REQUIRED_FIELDS = [id_enunciado,fecha_inicio]
 

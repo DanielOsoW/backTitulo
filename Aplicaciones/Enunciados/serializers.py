@@ -58,7 +58,8 @@ class EnunciadosSerializer(serializers.ModelSerializer):
             'id',
             'titulo',
             'enunciado',
-            'tipo')
+            'tipo',
+            'respuesta')
 
 class DatosSerializer(serializers.ModelSerializer):
 
@@ -84,7 +85,10 @@ class DatosSerializer(serializers.ModelSerializer):
             'value_error',
             'nro_lineas',
             'nro_ediciones',
-            'nro_compilaciones')
+            'nro_compilaciones',
+            'nro_estrucflujo',
+            'nro_operandos',
+            'respuesta')
 
 class NasaSerializer(serializers.ModelSerializer):
 

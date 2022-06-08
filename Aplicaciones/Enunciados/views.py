@@ -342,6 +342,12 @@ def encontrar_datos(request, pk):
         dato.delete()
         return JsonResponse({'message': 'El dato fue correctamente eliminado'}, status=status.HTTP_204_NO_CONTENT)
 
+@api_view(['GET', 'PUT', 'PATCH', 'DELETE'])
+def encontrar_datos_cruz(request, pk):
+    datos_cruz = models.Datos.objects.filter(id_enunciado=pk,fecha_termino__isnull=False)
+    datos_cruzSerializer = serials.DatosSerializer(datos_cruz, many=True)
+    return JsonResponse(datos_cruzSerializer.data, safe=False)
+
 # Login
 
 @api_view(['POST'])
