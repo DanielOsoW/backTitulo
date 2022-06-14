@@ -33,6 +33,9 @@ class UsuariosSerializer(serializers.ModelSerializer):
             'sexo',
             'password',
             'carrera',
+            'entidad',
+            'anos_experiencia',
+            'titulo_profesional',
             'date_joined','email','first_name','is_active','is_staff','is_superuser','last_login','last_name'
         )
         extra_kwargs = {
@@ -88,6 +91,9 @@ class DatosSerializer(serializers.ModelSerializer):
             'nro_compilaciones',
             'nro_estrucflujo',
             'nro_operandos',
+            'entidad',
+            'anos_experiencia',
+            'titulo_profesional',
             'respuesta')
 
 class NasaSerializer(serializers.ModelSerializer):

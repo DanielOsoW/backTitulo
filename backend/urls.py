@@ -55,6 +55,8 @@ urlpatterns = [
     path('datos/create', views.crear_datos),  # Crear nuevos datos
     path('datos/<int:pk>', views.encontrar_datos),  # Leer, actualizar o eliminar un dato
     path('data/<int:pk>', views.encontrar_datos_cruz),  # Leer, actualizar o eliminar un dato
+    path('progress/<int:pk>', views.encontrar_datos_usuario),  # Leer, actualizar o eliminar un dato
+    path('progress/<int:pk1>/<int:pk2>', views.encontrar_datos_usuario_enunciado),  # Leer, actualizar o eliminar un dato
 
     # LOGIN
     path('login', views.login_user),  # login de ususarios

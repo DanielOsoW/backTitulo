@@ -24,6 +24,9 @@ class Usuarios(AbstractUser):
     sexo = models.CharField(max_length=40,null=True)
     password = models.CharField(max_length=255)
     carrera = models.ForeignKey(Carreras, to_field='id', on_delete=models.CASCADE, blank=True, null=True)
+    entidad = models.CharField(max_length=50,null=True)
+    anos_experiencia = models.IntegerField(null=True)
+    titulo_profesional = models.CharField(max_length=100,null=True)
     date_joined = models.DateTimeField(auto_now_add=True, null=True)
     email = models.CharField(max_length=40, null = True)
     first_name = models.CharField(max_length=20, null = True)
@@ -68,6 +71,9 @@ class Datos(models.Model):
     nro_compilaciones = models.IntegerField(null=True)
     nro_estrucflujo = models.IntegerField(null=True)
     nro_operandos = models.IntegerField(null=True)
+    entidad = models.CharField(max_length=50,null=True)
+    anos_experiencia = models.IntegerField(null=True)
+    titulo_profesional = models.CharField(max_length=100,null=True)
     respuesta = models.CharField(max_length=50,null=True)
 
     REQUIRED_FIELDS = [id_enunciado,fecha_inicio]
