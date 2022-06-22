@@ -25,6 +25,7 @@ class UsuariosSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'rol',
+            'carrera',
             'apellido1',
             'apellido2',
             'nombres',
@@ -32,10 +33,7 @@ class UsuariosSerializer(serializers.ModelSerializer):
             'edad',
             'sexo',
             'password',
-            'carrera',
-            'entidad',
             'anos_experiencia',
-            'titulo_profesional',
             'date_joined','email','first_name','is_active','is_staff','is_superuser','last_login','last_name'
         )
         extra_kwargs = {
@@ -50,8 +48,40 @@ class UsuariosSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
         
+class UsuariosPasswordlessSerializer(serializers.ModelSerializer):
 
+    class Meta:
+        model = models.Usuarios
+        fields = (
+            'id',
+            'rol',
+            'carrera',
+            'apellido1',
+            'apellido2',
+            'nombres',
+            'correo',
+            'edad',
+            'sexo',
+            'anos_experiencia',
+            'date_joined','email','first_name','is_active','is_staff','is_superuser','last_login','last_name'
+        )
 
+class UsuariosPasswordSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Usuarios
+        fields = (
+            'id',
+            'password'
+            )
+
+    def create( self, validated_data):
+        password = validated_data.pop('password', None)
+        instance = self.Meta.model(**validated_data)
+        if password is not None:
+            instance.set_password(password)
+        instance.save()
+        return instance
 
 class EnunciadosSerializer(serializers.ModelSerializer):
 
@@ -62,7 +92,8 @@ class EnunciadosSerializer(serializers.ModelSerializer):
             'titulo',
             'enunciado',
             'tipo',
-            'respuesta')
+            'respuesta',
+            'active')
 
 class DatosSerializer(serializers.ModelSerializer):
 
@@ -70,8 +101,10 @@ class DatosSerializer(serializers.ModelSerializer):
         model = models.Datos
         fields = (
             'id',
-            'id_enunciado',
-            'id_estudiante',
+            'enunciado',
+            'usuario',
+            'carrera',
+            'rol',
             'edad',
             'sexo',
             'fecha_inicio',
@@ -91,9 +124,7 @@ class DatosSerializer(serializers.ModelSerializer):
             'nro_compilaciones',
             'nro_estrucflujo',
             'nro_operandos',
-            'entidad',
             'anos_experiencia',
-            'titulo_profesional',
             'respuesta')
 
 class NasaSerializer(serializers.ModelSerializer):
@@ -102,8 +133,8 @@ class NasaSerializer(serializers.ModelSerializer):
         model = models.Nasa
         fields = (
             'id',
-            'id_enunciado',
-            'id_data',
+            'enunciado',
+            'data',
             'mental',
             'fisico',
             'tiempo',

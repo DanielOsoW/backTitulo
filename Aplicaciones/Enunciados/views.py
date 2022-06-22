@@ -251,9 +251,21 @@ def encontrar_carrera(request, pk):
 # CRUD Enunciados
 
 @api_view(['GET', 'DELETE'])
-def lista_enunciados(request):
+def lista_enunciados_all(request):
     if request.method == 'GET':
         enunciados = models.Enunciados.objects.all()
+        enunciadosSerializer = serials.EnunciadosSerializer(enunciados, many=True)
+        return JsonResponse(enunciadosSerializer.data, safe=False)
+
+    elif request.method == 'DELETE':
+        count = models.Enunciados.objects.all().delete()
+        return JsonResponse({'message': 'Se borraron exitosamente {} enunciados.'.format(count[0])},
+                            status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET', 'DELETE'])
+def lista_enunciados_active(request):
+    if request.method == 'GET':
+        enunciados = models.Enunciados.objects.all().filter(active=True)
         enunciadosSerializer = serials.EnunciadosSerializer(enunciados, many=True)
         return JsonResponse(enunciadosSerializer.data, safe=False)
 
@@ -344,19 +356,19 @@ def encontrar_datos(request, pk):
 
 @api_view(['GET', 'PUT', 'PATCH', 'DELETE'])
 def encontrar_datos_cruz(request, pk):
-    datos_cruz = models.Datos.objects.filter(id_enunciado=pk,fecha_termino__isnull=False)
+    datos_cruz = models.Datos.objects.filter(enunciado=pk,fecha_termino__isnull=False)
     datos_cruzSerializer = serials.DatosSerializer(datos_cruz, many=True)
     return JsonResponse(datos_cruzSerializer.data, safe=False)
 
 @api_view(['GET', 'PUT', 'PATCH', 'DELETE'])
 def encontrar_datos_usuario(request, pk):
-    datos_usuario = models.Datos.objects.filter(id_estudiante=pk,fecha_termino__isnull=False)
+    datos_usuario = models.Datos.objects.filter(usuario=pk,fecha_termino__isnull=False)
     datos_usuarioSerializer = serials.DatosSerializer(datos_usuario, many=True)
     return JsonResponse(datos_usuarioSerializer.data, safe=False)
 
 @api_view(['GET', 'PUT', 'PATCH', 'DELETE'])
 def encontrar_datos_usuario_enunciado(request, pk1, pk2):
-    datos_usuario_enunciado = models.Datos.objects.filter(id_estudiante=pk1, id_enunciado=pk2,fecha_termino__isnull=False)
+    datos_usuario_enunciado = models.Datos.objects.filter(usuario=pk1, enunciado=pk2,fecha_termino__isnull=False)
     datos_usuario_enunciadoSerializer = serials.DatosSerializer(datos_usuario_enunciado, many=True)
     return JsonResponse(datos_usuario_enunciadoSerializer.data, safe=False)
 

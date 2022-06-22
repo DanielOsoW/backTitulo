@@ -11,11 +11,12 @@ class Roles(models.Model):
 
 
 class Carreras(models.Model):
-    nombre_carrera = models.CharField(max_length=50)
+    nombre_carrera = models.CharField(max_length=100)
 
 
 class Usuarios(AbstractUser):
     rol = models.ForeignKey(Roles, to_field='id', on_delete=models.CASCADE)
+    carrera = models.ForeignKey(Carreras, to_field='id', on_delete=models.CASCADE, blank=True, null=True)
     apellido1 = models.CharField(max_length=20)
     apellido2 = models.CharField(max_length=20)
     nombres = models.CharField(max_length=40)
@@ -23,10 +24,7 @@ class Usuarios(AbstractUser):
     edad = models.IntegerField(null=True)
     sexo = models.CharField(max_length=40,null=True)
     password = models.CharField(max_length=255)
-    carrera = models.ForeignKey(Carreras, to_field='id', on_delete=models.CASCADE, blank=True, null=True)
-    entidad = models.CharField(max_length=50,null=True)
     anos_experiencia = models.IntegerField(null=True)
-    titulo_profesional = models.CharField(max_length=100,null=True)
     date_joined = models.DateTimeField(auto_now_add=True, null=True)
     email = models.CharField(max_length=40, null = True)
     first_name = models.CharField(max_length=20, null = True)
@@ -43,21 +41,24 @@ class Usuarios(AbstractUser):
 
 class Enunciados(models.Model):
     titulo = models.CharField(max_length=50)
-    enunciado = models.CharField(max_length=400)
+    enunciado = models.CharField(max_length=800)
     tipo = models.CharField(max_length=30)
     respuesta = models.CharField(max_length=50)
+    active = models.BooleanField(default=False)
 
     REQUIRED_FIELDS = [titulo,enunciado]
 
 class Datos(models.Model):
-    id_enunciado = models.ForeignKey(Enunciados, to_field='id', on_delete=models.CASCADE)
-    id_estudiante = models.ForeignKey(Usuarios, to_field='id', on_delete=models.CASCADE, null=True)
+    enunciado = models.ForeignKey(Enunciados, to_field='id', on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuarios, to_field='id', on_delete=models.CASCADE, null=True)
+    carrera = models.ForeignKey(Carreras, to_field='id', on_delete=models.CASCADE, blank=True, null=True)
+    rol = models.ForeignKey(Roles, to_field='id', on_delete=models.CASCADE, blank=True, null=True)
     edad = models.IntegerField(null=True)
     sexo = models.CharField(max_length=40,null=True)
     fecha_inicio = models.DateTimeField(auto_now_add=True, null=True, editable=False)
     fecha_termino = models.DateTimeField(null=True)
-    solucion = models.CharField(max_length=400,null=True, blank=True)
-    resultado = models.CharField(max_length=400,null=True, blank=True)
+    solucion = models.CharField(max_length=800,null=True, blank=True)
+    resultado = models.CharField(max_length=800,null=True, blank=True)
     nro_errores = models.IntegerField(null=True)
     module_error = models.IntegerField(null=True)
     name_error = models.IntegerField(null=True)
@@ -71,16 +72,14 @@ class Datos(models.Model):
     nro_compilaciones = models.IntegerField(null=True)
     nro_estrucflujo = models.IntegerField(null=True)
     nro_operandos = models.IntegerField(null=True)
-    entidad = models.CharField(max_length=50,null=True)
     anos_experiencia = models.IntegerField(null=True)
-    titulo_profesional = models.CharField(max_length=100,null=True)
-    respuesta = models.CharField(max_length=50,null=True)
+    respuesta = models.CharField(max_length=800,null=True)
 
-    REQUIRED_FIELDS = [id_enunciado,fecha_inicio]
+    REQUIRED_FIELDS = [enunciado,fecha_inicio]
 
 class Nasa(models.Model):
-    id_enunciado = models.ForeignKey(Enunciados, to_field='id', on_delete=models.CASCADE)
-    id_data = models.ForeignKey(Datos, to_field='id', on_delete=models.CASCADE)
+    enunciado = models.ForeignKey(Enunciados, to_field='id', on_delete=models.CASCADE)
+    data = models.ForeignKey(Datos, to_field='id', on_delete=models.CASCADE)
     mental = models.IntegerField(null=True)
     fisico = models.IntegerField(null=True)
     tiempo = models.IntegerField(null=True)
@@ -89,4 +88,4 @@ class Nasa(models.Model):
     frustracion = models.IntegerField(null=True)
     result = models.IntegerField(null=True)
 
-    REQUIRED_FIELDS = [id_enunciado,id_data]
+    REQUIRED_FIELDS = [enunciado,data]

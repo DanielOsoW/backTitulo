@@ -13,40 +13,41 @@ INSERT INTO public."Enunciados_carreras"(nombre_carrera)
 /* Roles */
 INSERT INTO public."Enunciados_roles"(nombre_rol)
 	VALUES
-	('Estudiante'),
-    ('Profesor'),
-    ('QA');
+	('QA'),
+	('Profesor'),
+	('Estudiante');
+    
 
 /* Usuarios */
-INSERT INTO public."Enunciados_usuarios"(apellido1,apellido2,nombres,correo,password,carrera_id,rol_id,sexo,edad,titulo_profesional,entidad,anos_experiencia)
+INSERT INTO public."Enunciados_usuarios"(apellido1,apellido2,nombres,correo,password,carrera_id,rol_id,sexo,edad,anos_experiencia)
 	VALUES
-	('Perez','Tapia','Hector Campos','hector.peta@gmail.com','asd',1,1,'Masculino',24,'INGENIERÍA CIVIL EN INFORMÁTICA','Estudiante',2),
-	('Suarez','Ruiz','Edgar Ruiz','edsuru@live.cl','asd',1,1,'Masculino',24,'INGENIERÍA CIVIL EN INFORMÁTICA','Estudiante',2),
-	('Ferrer','Gutierrez','Arturo Garrido','ferrerartu@smail.com','asd',1,2,'Masculino',24,'INGENIERÍA CIVIL EN INFORMÁTICA','Estudiante',2),
-	('Pascual','Jiménez','Dorotea Morales','doropascual@hotmail.cl','asd',1,2,'Femenino',24,'INGENIERÍA CIVIL EN INFORMÁTICA','Estudiante',2),
-	('Mora','Saez','Asunción Moreno','asumoreno@gmail.com','asd',1,3,'Prefiero no decirlo',24,'INGENIERÍA CIVIL EN INFORMÁTICA','Estudiante',2),
-	('Hidalgo','Méndez','Reinaldo Mendez','reihidalgo@hotmail.cl','asd',2,3,'Masculino',24,'INGENIERÍA CIVIL EN INFORMÁTICA','Estudiante',2),
-	('Juanes','Tapia','Alberto Esteban','albertoesteban@gmail.com','asd',3,3,'Masculino',24,'INGENIERÍA CIVIL EN INFORMÁTICA','Estudiante',2),
-	('Suazo','Jara','Gerardo Juan','gejusuja@live.cl','asd',4,3,'Masculino',24,'INGENIERÍA CIVIL EN INFORMÁTICA','Estudiante',2),
-	('Mendez','Román','Arturo Luis','arturoluis@smail.com','asd',5,3,'Masculino',24,'INGENIERÍA CIVIL EN INFORMÁTICA','Estudiante',2),
-	('Labarca','Lara','Trinidad Kristina','trinikri@hotmail.cl','asd',1,1,'Femenino',24,'INGENIERÍA CIVIL EN INFORMÁTICA','Estudiante',2),
-	('Cancino','Kri','Juan Pablo','jpcancino@gmail.com','asd',2,1,'Masculino',24,'INGENIERÍA DE EJECUCIÓN EN COMPUTACIÓN E INFORMÁTICA','Estudiante',2),
-	('Bielsa','Nilo','Fernando Lucas','ferbielsanilo@hotmail.cl','asd',3,1,'Masculino',24,'INGENIERÍA DE EJECUCIÓN EN COMPUTACIÓN E INFORMÁTICA','Estudiante',2),
-	('Rojas','Heller','Joaquin Cristobal','joacorojas@hotmail.cl','asd',4,2,'Masculino',24,'INGENIERÍA DE EJECUCIÓN EN COMPUTACIÓN E INFORMÁTICA','Estudiante',2),
-	('Linton','Cruz','Victoria Justa','vickylin@hotmail.cl','asd',5,2,'Femenino',24,'INGENIERÍA DE EJECUCIÓN EN COMPUTACIÓN E INFORMÁTICA','Estudiante',2),
-	('Lopez','Rodriguez','Sofía Javiera','sofilopez@gmail.com','asd',1,2,'Femenino',24,'INGENIERÍA DE EJECUCIÓN EN COMPUTACIÓN E INFORMÁTICA','Estudiante',2),
-	('Bravo','Caro','Gastón Bastián','bravogaston@hotmail.cl','asd',2,3,'Masculino',24,'INGENIERÍA DE EJECUCIÓN EN COMPUTACIÓN E INFORMÁTICA','Estudiante',2),
-	('Truman','Linetti','Julieta Francisca','julitruman@hotmail.cl','asd',3,3,'Femenino',24,'INGENIERÍA DE EJECUCIÓN EN COMPUTACIÓN E INFORMÁTICA','Estudiante',2),
-	('Catrileo','Yanka','Karla Constanza','karlacatrileo@gmail.com','asd',4,3,'Prefiero no decirlo',24,'INGENIERÍA DE EJECUCIÓN EN COMPUTACIÓN E INFORMÁTICA','Estudiante',2),
-	('Gonzales','Rubilar','Linda Flor','lindaflor@hotmail.cl','asd',5,1,'Femenino',24,'INGENIERÍA DE EJECUCIÓN EN COMPUTACIÓN E INFORMÁTICA','Estudiante',2);
+	('Osorio','Weng','Daniel','daniel.osorio.w@usach.cl','pbkdf2_sha256$320000$kCSsHdO6hwuXCYRIN7rDrK$2r+FokBR0kn++Y377sJg0SMxerkN8UFdC7rK3vNT2nA=',1,1,'Masculino',24,5),
+	('Suarez','Ruiz','Edgar Ruiz','edsuru@live.cl','asd',1,1,'Masculino',24,2),
+	('Ferrer','Gutierrez','Arturo Garrido','ferrerartu@smail.com','asd',1,2,'Masculino',24,2),
+	('Pascual','Jiménez','Dorotea Morales','doropascual@hotmail.cl','asd',1,2,'Femenino',24,2),
+	('Mora','Saez','Asunción Moreno','asumoreno@gmail.com','asd',1,3,'Prefiero no decirlo',24,2),
+	('Hidalgo','Méndez','Reinaldo Mendez','reihidalgo@hotmail.cl','asd',2,3,'Masculino',24,2),
+	('Juanes','Tapia','Alberto Esteban','albertoesteban@gmail.com','asd',3,3,'Masculino',24,2),
+	('Suazo','Jara','Gerardo Juan','gejusuja@live.cl','asd',4,3,'Masculino',24,2),
+	('Mendez','Román','Arturo Luis','arturoluis@smail.com','asd',5,3,'Masculino',24,2),
+	('Labarca','Lara','Trinidad Kristina','trinikri@hotmail.cl','asd',1,1,'Femenino',24,2),
+	('Cancino','Kri','Juan Pablo','jpcancino@gmail.com','asd',2,1,'Masculino',24,2),
+	('Bielsa','Nilo','Fernando Lucas','ferbielsanilo@hotmail.cl','asd',3,1,'Masculino',24,2),
+	('Rojas','Heller','Joaquin Cristobal','joacorojas@hotmail.cl','asd',4,2,'Masculino',24,2),
+	('Linton','Cruz','Victoria Justa','vickylin@hotmail.cl','asd',5,2,'Femenino',24,2),
+	('Lopez','Rodriguez','Sofía Javiera','sofilopez@gmail.com','asd',1,2,'Femenino',24,2),
+	('Bravo','Caro','Gastón Bastián','bravogaston@hotmail.cl','asd',2,3,'Masculino',24,2),
+	('Truman','Linetti','Julieta Francisca','julitruman@hotmail.cl','asd',3,3,'Femenino',24,2),
+	('Catrileo','Yanka','Karla Constanza','karlacatrileo@gmail.com','asd',4,3,'Prefiero no decirlo',24,2),
+	('Gonzales','Rubilar','Linda Flor','lindaflor@hotmail.cl','asd',5,1,'Femenino',24,2);
 
 /* Enunciados */
-INSERT INTO public."Enunciados_enunciados" (titulo,enunciado,tipo)
+INSERT INTO public."Enunciados_enunciados" (titulo,enunciado,tipo,respuesta,active)
 	VALUES
 	('Pares','Llevar a cabo un programa en Python que compare 2 listas de números,
-	\nrevisando si la suma de cada número de la lista 1 con el de la\nlista 2 dan como resultado un número par.\nLista 1: [1,2,3,4].\nLista 2: [1,2,2,1]','Orden'),
-	('Sumatoria','Crear un programa en Python que lleva a cabo una\nsumatoria de 1 desde el 1 al 10','Ciclos'),
-	('Encuentra palabra','Llevar a cabo un programa en Python que busque\nuna palabra específica en un texto, y retorne si la palabra existe en el mismo\ny la cantidad de veces que aparece','Búsqueda');
+	\nrevisando si la suma de cada número de la lista 1 con el de la\nlista 2 dan como resultado un número par.\nLista 1: [1,2,3,4].\nLista 2: [1,2,2,1]','Orden','1','true'),
+	('Sumatoria','Crear un programa en Python que lleva a cabo una\nsumatoria de 1 desde el 1 al 10','Ciclos','1','true'),
+	('Encuentra palabra','Llevar a cabo un programa en Python que busque\nuna palabra específica en un texto, y retorne si la palabra existe en el mismo\ny la cantidad de veces que aparece','Búsqueda','1','true');
 	/*('Buscador de Aes','Construya un programa en Python que recibiendo como entrada una secuencia aleatoria de letras, identifique la
 secuencia mas larga de aes.
 Ejemplo:
@@ -128,11 +129,11 @@ Salida: 4f2a','Lógica'),
 
 
 
-/* Datos */
+/* Datos 
 INSERT INTO public."Enunciados_datos"(fecha_inicio,fecha_termino,errores,id_enunciado_id,id_estudiante_id)
 	VALUES
 	(CURRENT_TIMESTAMP(0),CURRENT_TIMESTAMP(0),2,1,1);
-
+*/
 
 END;
 

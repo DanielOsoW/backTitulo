@@ -44,7 +44,8 @@ urlpatterns = [
     path('carreras/<int:pk>', views.encontrar_carrera),  # Leer, actualizar o eliminar una carrera
 
     # CRUD enunciados
-    path('enunciados/all', views.lista_enunciados),  # Obtener o eliminar todas las enunciados
+    path('enunciados/allactive', views.lista_enunciados_active),  # Obtener o eliminar todas las enunciados activos
+    path('enunciados/all', views.lista_enunciados_all),  # Obtener o eliminar todas las enunciados
     path('enunciados/create', views.crear_enunciado),  # Crear nuevo enunciado
     path('enunciados/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar un enunciado
     path('area/<int:pk>', views.encontrar_enunciado),  # Leer, actualizar o eliminar un enunciado
