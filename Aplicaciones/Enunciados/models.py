@@ -43,7 +43,7 @@ class Enunciados(models.Model):
     titulo = models.CharField(max_length=50)
     enunciado = models.CharField(max_length=800)
     tipo = models.CharField(max_length=30)
-    respuesta = models.CharField(max_length=50)
+    respuesta = models.CharField(max_length=800)
     active = models.BooleanField(default=False)
 
     REQUIRED_FIELDS = [titulo,enunciado]

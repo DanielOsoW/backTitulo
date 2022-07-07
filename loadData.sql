@@ -4,16 +4,42 @@
 /* Carreras */
 INSERT INTO public."Enunciados_carreras"(nombre_carrera)
 	VALUES
-	('IngenieríaCivilInformática'),
-	('IngenieríadeEjecuciónenComputacióneInformática'),
-	('IngenieríaCivilBiomédica'),
-	('IngenieríaCivilenTelemática'),
-    ('IngenieríaCivilMecatrónica');
+	('Ingenieria Civil Informatica'),
+	('Ingenieria de Ejecucion en Computacion e Informatica'),
+	('Analista en Computacion Cientifica/Licenciatura en Ciencia de la Computacion'),
+	('Pedagogia en Matematica y Computacion'),
+	('Ingenieria Civil Biomedica'),
+	('Ingenieria Civil en Ambiente'),
+	('Ingenieria Civil en Biotecnología'),
+	('Ingenieria Civil en Electricidad'),
+	('Ingenieria Civil en Geografia'),
+	('Ingenieria Civil en Geomensura y Geomatica'),
+	('Ingenieria Civil en Mecanica'),
+	('Ingenieria Civil en Metalurgia'),
+	('Ingenieria Civil en Minas'),
+	('Ingenieria Civil en Obras Civiles'),
+	('Ingenieria Civil en Quimica'),
+	('Ingenieria Civil en Telematica'),
+	('Ingenieria Civil Industrial'),
+	('Ingenieria Civil Mecatronica'),
+	('Ingenieria Comercial'),
+	('Ingenieria de Alimentos'),
+	('Ingenieria de Ejecucion en Climatizacion'),
+	('Ingenieria de Ejecucion en Electricidad'),
+	('Ingenieria de Ejecucion Industrial'),
+	('Ingenieria de Ejecucion en Mecanica'),
+	('Ingenieria de Ejecucion en Metalurgia'),
+	('Ingenieria de Ejecucion en Minas'),
+	('Ingenieria de Ejecucion en Quimica'),
+	('Ingenieria en Agronegocios'),
+	('Ingenieria Estadistica'),
+	('Ingenieria Fisica'),
+	('Ingenieria Matematica');
 	
 /* Roles */
 INSERT INTO public."Enunciados_roles"(nombre_rol)
 	VALUES
-	('QA'),
+	('Admin'),
 	('Profesor'),
 	('Estudiante');
     
