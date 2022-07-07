@@ -135,7 +135,8 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8081',
-    'http://127.0.0.1:8081'
+    'http://127.0.0.1:8081',
+    'http://143.198.131.116:8081'
 )
 
 AUTH_USER_MODEL = 'Enunciados.Usuarios'
