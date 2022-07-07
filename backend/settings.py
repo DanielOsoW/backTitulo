@@ -83,8 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'enunciados',
         'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': '127.0.0.1',
+        'HOST': '143.198.131.116',
         'DATABASE_PORT': '5432'
     }
 }
