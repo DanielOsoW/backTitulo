@@ -136,7 +136,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    'http://164.92.79.203:3000'
+    'http://159.203.173.102:3000'
 )
 
 AUTH_USER_MODEL = 'Enunciados.Usuarios'
